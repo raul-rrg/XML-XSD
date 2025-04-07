@@ -1,0 +1,1 @@
+#### He corregido la estructura del XSD que estaba mal cerrada y desordenada, y ajustamos el patrón de las iniciales para que coincida con lo que hay en el XML.s

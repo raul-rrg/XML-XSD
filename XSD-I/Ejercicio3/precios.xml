@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Añadimos la declarcion inicial en el que incluimos como atribito la version y el formato de codigo, esta 
+siempre debe ser la primera linea del documento XML-->
+
+<!--
+Nombre: Raul Rivera Garrido
+Curso: 1 º DAM
+Fecha: [7/04/2025]
+Ejercicio-3
+-->
+<precios xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="precios.xsd">
+    <precio>8</precio>
+    <precio>2.6</precio>
+    <precio>4.95</precio>
+    <precio>187</precio>
+</precios>

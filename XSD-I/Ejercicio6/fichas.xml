@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Añadimos la declaración inicial en la que incluimos como atributo la versión y el formato de código, 
+     esta siempre debe ser la primera línea del documento XML -->
+
+<!--
+Nombre: Raul Rivera Garrido
+Curso: 1º DAM
+Fecha: [7/04/2025]
+Ejercicio-6
+-->
+
+<fichas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="fichas.xsd">
+    
+    <ficha>
+        <nombre>Ana Sanz Tin</nombre>
+        <iniciales>AST</iniciales>
+        <edad>22</edad>
+        <iniciales-al-reves>TSA</iniciales-al-reves>
+    </ficha>
+    
+    <ficha>
+        <nombre>Iker Rubio Mol</nombre>
+        <iniciales>IRM</iniciales>
+        <edad>23</edad>
+        <iniciales-al-reves>MRI</iniciales-al-reves>
+    </ficha>
+    
+</fichas>

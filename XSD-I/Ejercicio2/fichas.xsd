@@ -1,0 +1,35 @@
+
+<!--Restrocturamos el esquema xs anterior para  la "edad" esté entre 0 y 130 
+usando las restricciones minExclusive y maxExclusive dentro de xs:simpleType
+asi conseguimos validar correctamente el rango de edad-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:element name="fichas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ficha" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" type="xs:string"/>
+              
+              <xs:element name="edad">
+                <xs:simpleType>
+                   <!--Establecemos las restriciones del rango de edad--> 
+                  <xs:restriction base="xs:int">
+                    <!-- Establecemos que la edad debe de ser mayor que 0 -->
+                    <xs:minExclusive value="0"/>
+                    <!-- Establecemos que la edad debe de ser menor que 130-->
+                    <xs:maxExclusive value="130"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="numero" type="xs:int"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
