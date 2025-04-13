@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!--Añadimos la declarcion inicial en el que incluimos como atributo la version y el formato de codigo, esta 
+siempre debe ser la primera linea del documento XML-->
+
+<!--
+Nombre: Raul Rivera Garrido
+Curso: 1 º DAM
+nombre: [13/04/2025]
+Ejercicio-3
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="heladeria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="helado" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <!--Establecemos un "choice" para que se selecione un unico elemento que puede ser "chocolate" o 
+              "fresa", pero no ambos -->
+              <xs:choice>
+                <xs:element name="chocolate">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                      <xs:minInclusive value="0"/>
+                      <xs:maxInclusive value="1000"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="fresa">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                      <xs:minInclusive value="0"/>
+                      <xs:maxInclusive value="1000"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+              </xs:choice>
+              
+              <!--Volvemos repetir el proceso ahora, pero con vainilla, turron y nata-->
+              <xs:choice>
+                <xs:element name="vainilla">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                      <xs:minInclusive value="0"/>
+                      <xs:maxInclusive value="1000"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="turron">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                      <xs:minInclusive value="0"/>
+                      <xs:maxInclusive value="1000"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="nata">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                      <xs:minInclusive value="0"/>
+                      <xs:maxInclusive value="1000"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+              </xs:choice>
+            </xs:sequence>
+            <!--Por ultimo establecemos que el atributo fabricacion debe de ser obligatorio y de tipo fecha -->
+            <xs:attribute name="fabricación" type="xs:date" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

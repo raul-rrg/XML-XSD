@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!--Añadimos la declarcion inicial en el que incluimos como atributo la version y el formato de codigo, esta 
+siempre debe ser la primera linea del documento XML-->
+
+<!--
+Nombre: Raul Rivera Garrido
+Curso: 1 º DAM
+nombre: [13/04/2025]
+Ejercicio-6
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="libreria">
+    <!-- Creamos los elementos codigo, direccion teelgono propetario y libros -->
+    <xs:complexType>
+      <xs:sequence>
+        <!-- En el codigo generamos una restriccion la cual tendra un minimo 1000 y un maximo de 9999 -->
+        <xs:element name="codigo">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:minInclusive value="1000"/>
+              <xs:maxInclusive value="9999"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="direccion" type="xs:string"/>
+        <xs:element name="telefono" type="telefonoType"/>
+        <xs:element name="propietario">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" type="xs:string"/>
+              <!-- Definimos el maximo de ocurrencia las cuales seran que un propetario puede tener 0 o mas telefonos -->
+              <xs:element name="telefono" type="telefonoType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="libro" type="libroType" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--Para los telefonos añadirecmos una expresion regular para definir que la plantilla a seguir debe de ser de 9 numeros -->
+  <xs:simpleType name="telefonoType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{9}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="libroType">
+    <xs:sequence>
+      <xs:element name="titulo" type="xs:string"/>
+      <xs:element name="autor" type="xs:string"/>
+      <!--Establecemos una restriccion la cual tendra una enumeracion para elegir el formato 
+      el cual puede ser rustico, de tapa blanda o tapa dura -->
+      <xs:element name="formato" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Rústica"/>
+            <xs:enumeration value="Tapa blanda"/>
+            <xs:enumeration value="Tapa dura"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="publicacion" type="xs:string" minOccurs="0"/>
+      <xs:element name="precio" type="xs:string" minOccurs="0"/>
+      <xs:element name="cantidad" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!--Añadimos la declaracion inicial en el que incluimos como atributo la version y el formato de codigo, esta 
+siempre debe ser la primera linea del documento XML-->
+
+<!--
+nombre: Raul Rivera Garrido
+Curso: 1 º DAM
+nombre: [13/04/2025]
+Ejercicio-4
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="muebles">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Definimos un elemento que usara como tipo de dato el elemento creado "colorMueble" -->
+        <xs:element name="mueble" type="tipoColorMueble" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <!-- Por una parte crearemos un tipo complejo con el color y por otra mantendremos el tipo de nuestros tipos de muebles  -->
+
+  <!-- Definimos un elemento complejo que se llamara tipoColorMUeble -->
+  <xs:complexType name="tipoColorMueble">
+    <xs:simpleContent>
+      <xs:extension base="tipoMueble">
+        <!-- El cual tendra un atributo color, que usara un enumeration para seleccionar los colores que tenemos disponibles -->
+        <xs:attribute name="color" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="blanco"/>
+              <xs:enumeration value="gris"/>
+              <xs:enumeration value="negro"/>
+              <xs:enumeration value="wengue"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <!--Ahora deginimos el tipo de mubele que sera un enumeration en cual tendremos todos los tipos de muebles-->
+  <xs:simpleType name="tipoMueble">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="armario"/>
+      <xs:enumeration value="mesa"/>
+      <xs:enumeration value="silla"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

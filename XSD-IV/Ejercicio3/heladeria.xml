@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!--Añadimos la declarcion inicial en el que incluimos como atributo la version y el formato de codigo, esta 
+siempre debe ser la primera linea del documento XML-->
+
+<!--
+Nombre: Raul Rivera Garrido
+Curso: 1 º DAM
+nombre: [13/04/2025]
+Ejercicio-3
+-->
+
+<heladeria xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="heladeria.xsd">
+    <helado fabricación="2015-01-30">
+        <chocolate>250</chocolate>
+        <turron>300</turron>
+    </helado>
+    <helado fabricación="2015-01-30">
+        <fresa>500</fresa>
+        <vainilla>200</vainilla>
+    </helado>
+</heladeria>

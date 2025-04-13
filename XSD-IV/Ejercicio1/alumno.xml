@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!--Añadimos la declarcion inicial en el que incluimos como atributo la version y el formato de codigo, esta 
+siempre debe ser la primera linea del documento XML-->
+
+<!--
+Nombre: Raul Rivera Garrido
+Curso: 1 º DAM
+nombre: [13/04/2025]
+Ejercicio-1
+-->
+
+    <alumno dni="12345678A" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="alumno.xsd">
+     <nombre>Juan Garcia</nombre>
+        <direccion>
+         <calle>Avenida de la Fuente</calle>
+         <numero>6</numero>
+         <ciudad>Zafra</ciudad>
+         <provincia>Badajoz</provincia>
+        </direccion>
+     <telefono>924555555</telefono>
+     <telefono>658741236</telefono>
+</alumno>

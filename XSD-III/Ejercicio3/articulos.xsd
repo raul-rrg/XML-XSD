@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!--Añadimos la declaracion inicial en el que incluimos como atributo la version y el formato de codigo, esta 
+siempre debe ser la primera linea del documento XML-->
+
+<!--
+nombre: Raul Rivera Garrido
+Curso: 1 º DAM
+nombre: [13/04/2025]
+Ejercicio-3
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
+<xs:element name="articulos">
+  <xs:complexType>
+    <xs:sequence>
+      <!-- Deinimos el elemento articulo  dentro de articulos, permitiendo multiples de ellos -->
+      <xs:element name="articulo" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>    
+            <!-- Cada articulo tiene un elemento nombre-->
+            <xs:element name="nombre" type="xs:string"/>
+            <!-- Establcemos el elemento precio-->
+            <xs:element name="precio">
+              <xs:complexType>
+                <!-- Con dos valores uno con decimal y otro con moneda que es obligatorio  -->
+                <xs:simpleContent>
+                  <xs:extension base="xs:decimal">
+                    <xs:attribute name="moneda" type="xs:string" use="required"/>
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

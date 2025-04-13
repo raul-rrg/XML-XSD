@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!--Añadimos la declaracion inicial en el que incluimos como atributo la version y el formato de codigo, esta 
+siempre debe ser la primera linea del documento XML-->
+
+<!--
+nombre: Raul Rivera Garrido
+Curso: 1 º DAM
+nombre: [13/04/2025]
+Ejercicio-1
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <!--La primera opcione es indicando que valores podemos tener eligiendo un unico valor como opcional para ello usamos "|" 
+      para definir una de las opcioness "A|B|C|D|E" -->
+  <xs:element name="respuestaAlternativa1">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="A|B|C|D|E"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <!-- La segunda opcion es usar "xs:enumeration" para definir el conjunto de caracteres especificos validos -->
+  <xs:element name="respuestaAlternativa3">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="A"/>
+        <xs:enumeration value="B"/>
+        <xs:enumeration value="C"/>
+        <xs:enumeration value="D"/>
+        <xs:enumeration value="E"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+</xs:schema>
